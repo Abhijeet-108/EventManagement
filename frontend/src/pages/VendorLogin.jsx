@@ -50,7 +50,6 @@ export default function VendorLogin() {
     <div className="min-h-screen bg-gray-200 flex items-center justify-center">
       <div className="w-[950px] bg-gray-100 border border-gray-300 p-10 shadow-inner">
 
-        {/* Top Buttons */}
         <div className="flex justify-between mb-8">
           <button
             onClick={handleChart}
@@ -67,15 +66,10 @@ export default function VendorLogin() {
           </button>
         </div>
 
-        {/* Title */}
         <div className="bg-blue-200 text-center py-3 text-xl font-semibold border border-blue-300 mb-12">
           Event Management System
         </div>
-
-        {/* Form */}
         <form onSubmit={handleLogin} className="flex flex-col items-center gap-8">
-
-          {/* User ID */}
           <div className="flex items-center gap-10 w-full justify-center">
             <div className="bg-blue-500 text-black px-6 py-3 rounded-md w-40 text-center font-medium">
               User Id
@@ -90,8 +84,6 @@ export default function VendorLogin() {
               required
             />
           </div>
-
-          {/* Password */}
           <div className="flex items-center gap-10 w-full justify-center">
             <div className="bg-blue-500 text-black px-6 py-3 rounded-md w-40 text-center font-medium">
               Password
@@ -106,8 +98,6 @@ export default function VendorLogin() {
               required
             />
           </div>
-
-          {/* Buttons */}
           <div className="flex gap-16 mt-10">
             <button
               type="button"
@@ -124,8 +114,6 @@ export default function VendorLogin() {
               Login
             </button>
           </div>
-
-          {/* Message */}
           {message && (
             <p className="text-red-500 font-medium">{message}</p>
           )}

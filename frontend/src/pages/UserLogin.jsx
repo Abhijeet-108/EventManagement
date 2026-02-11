@@ -53,8 +53,6 @@ export default function UserLogin() {
         <form onSubmit={handleLogin}>
 
           <div className="flex flex-col items-center gap-8">
-
-            {/* User ID */}
             <div className="flex items-center gap-10 w-full justify-center">
 
               <div className="bg-blue-500 text-black px-6 py-3 rounded-md w-40 text-center font-medium">
@@ -69,8 +67,6 @@ export default function UserLogin() {
                 className="bg-blue-100 border border-blue-300 px-4 py-3 w-[450px] outline-none"
               />
             </div>
-
-            {/* Password */}
             <div className="flex items-center gap-10 w-full justify-center">
 
               <div className="bg-blue-500 text-black px-6 py-3 rounded-md w-40 text-center font-medium">
@@ -85,8 +81,6 @@ export default function UserLogin() {
                 className="bg-blue-100 border border-blue-300 px-4 py-3 w-[450px] outline-none"
               />
             </div>
-
-            {/* Buttons */}
             <div className="flex gap-16 mt-10">
 
               <button

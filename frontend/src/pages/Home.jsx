@@ -13,7 +13,6 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 w-full max-w-5xl">
 
-        {/* Vendor */}
         <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
           <h2 className="text-xl font-semibold mb-4">Vendor</h2>
 
@@ -31,8 +30,6 @@ export default function Home() {
             Signup as Vendor
           </button>
         </div>
-
-        {/* Admin */}
         <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
           <h2 className="text-xl font-semibold mb-4">Admin</h2>
 
@@ -43,8 +40,6 @@ export default function Home() {
             Login as Admin
           </button>
         </div>
-
-        {/* User */}
         <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
           <h2 className="text-xl font-semibold mb-4">User</h2>
 

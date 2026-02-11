@@ -35,14 +35,11 @@ export default function VendorSignupPage() {
   return (
     <div className="min-h-screen bg-gray-200 flex items-center justify-center">
       <div className="w-[1100px] bg-gray-100 border border-gray-300 p-10 shadow-inner">
-        {/* Title */}
         <div className="bg-blue-200 text-center py-4 text-xl font-semibold border border-blue-300 rounded-lg mb-14">
           Event Management System
         </div>
 
-        {/* Form Section */}
         <div className="flex flex-col gap-10 items-center">
-          {/* Name */}
           <div className="flex items-center gap-16 w-full justify-center">
             <div className="bg-blue-500 text-black px-8 py-4 rounded-md w-48 text-center font-medium">
               Name
@@ -56,8 +53,6 @@ export default function VendorSignupPage() {
               className="bg-blue-600 text-black px-6 py-4 w-[650px] outline-none"
             />
           </div>
-
-          {/* Email */}
           <div className="flex items-center gap-16 w-full justify-center">
             <div className="bg-blue-500 text-black px-8 py-4 rounded-md w-48 text-center font-medium">
               Email
@@ -72,7 +67,6 @@ export default function VendorSignupPage() {
             />
           </div>
 
-          {/* Password */}
           <div className="flex items-center gap-16 w-full justify-center">
             <div className="bg-blue-500 text-black px-8 py-4 rounded-md w-48 text-center font-medium">
               Password
@@ -87,7 +81,6 @@ export default function VendorSignupPage() {
             />
           </div>
 
-          {/* Category Dropdown */}
           <div className="flex items-center gap-16 w-full justify-center">
             <div className="bg-blue-500 text-black px-8 py-4 rounded-md w-48 text-center font-medium">
               Category
@@ -106,7 +99,6 @@ export default function VendorSignupPage() {
             </select>
           </div>
 
-          {/* Signup Button */}
           <div className="flex justify-center w-full mt-6">
             <button
               onClick={handleSignup}
