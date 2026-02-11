@@ -10,9 +10,13 @@ export default function Home() {
   };
 
   return (
+    <>
+    <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
+      <h2 className="text-xl font-semibold mb-4">Event Management System</h2>
+      <p className="text-gray-600 mb-6">Welcome to the Event Management System. Please select your role to continue.</p>
+    </div>
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 w-full max-w-5xl">
-
         <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
           <h2 className="text-xl font-semibold mb-4">Vendor</h2>
 
@@ -60,5 +64,6 @@ export default function Home() {
 
       </div>
     </div>
+    </>
   );
 }
