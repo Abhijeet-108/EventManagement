@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { api } from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 export default function UserLogin() {
 
@@ -23,6 +24,8 @@ export default function UserLogin() {
         setMessage("Login successful!");
         alert("Login successful!");
       }
+
+      useNavigate("/user-dashboard");
 
     } catch (error) {
 

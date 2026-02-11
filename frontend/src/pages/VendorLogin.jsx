@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { api } from "../services/api";
+import { use } from "react";
 
 export default function VendorLogin() {
 
@@ -22,6 +23,8 @@ export default function VendorLogin() {
         setMessage("Login successful!");
         alert("Login successful!");
       }
+
+      use ("/vendor-dashboard");
 
     } catch (error) {
       console.log("Login error:", error);

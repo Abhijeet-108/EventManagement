@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { api } from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 export default function VendorSignupPage() {
   const [name, setName] = useState("");
@@ -20,6 +21,8 @@ export default function VendorSignupPage() {
 
       setMessage(res.data.message);
       alert(res.data.message);
+
+      useNavigate("/vendor-login");
 
     } catch (error) {
 

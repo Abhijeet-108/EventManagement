@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { api } from "../services/api";  
+import { useNavigate } from "react-router-dom";
 
 export default function UserSignup() {
   const [name, setName] = useState("");
@@ -20,7 +21,7 @@ export default function UserSignup() {
         // alert(res?.data?.message || "Signup success");
 
 
-        navigate("/user-login");
+        useNavigate("/user-login");
     }catch(error){
         console.log("Full error:", error);
     }

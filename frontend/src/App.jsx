@@ -7,6 +7,9 @@ import UserLogin from './pages/userLogin'
 import VendorLogin from './pages/VendorLogin'
 import VendorSignupPage from './pages/vendorSignup'
 import AdminLoginPage from './pages/AdminLogin'
+import VendorDashboard from './pages/VendorDashboard'
+import UserDashboard from './pages/UserDashboard'
+import AdminDashboard from './pages/AdminDashboard'
 
 function App() {
 
@@ -19,6 +22,9 @@ function App() {
         <Route path='/vendor-login' element={<VendorLogin />} />
         <Route path='/vendor-signup' element={<VendorSignupPage />} />
         <Route path='/admin-login' element={<AdminLoginPage />} />
+        <Route path='/vendor-dashboard' element={<VendorDashboard />} />
+        <Route path='/user-dashboard' element={<UserDashboard />} />
+        <Route path='/admin-dashboard' element={<AdminDashboard />} />
       </Routes>
     </>
   )

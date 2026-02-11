@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { api } from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminLoginPage() {
     const [username, setUsername] = useState("");
@@ -18,9 +19,11 @@ export default function AdminLoginPage() {
             console.log("Login response:", res.data);
     
             if (res.status === 200) {
-            setMessage("Login successful!");
-            alert("Login successful!");
+              setMessage("Login successful!");
+              alert("Login successful!");
             }
+
+            useNavigate("/admin-dashboard");
     
         } catch (error) {
             console.log("Login error:", error);
