@@ -8,6 +8,8 @@ export default function UserSignup() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSignup = () => {
     try{
         const res = api.post("/users/register", {
@@ -21,7 +23,7 @@ export default function UserSignup() {
         // alert(res?.data?.message || "Signup success");
 
 
-        useNavigate("/user-login");
+        navigate("/user-login");
     }catch(error){
         console.log("Full error:", error);
     }

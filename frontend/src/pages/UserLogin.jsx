@@ -8,6 +8,8 @@ export default function UserLogin() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
+  const navigate = useNavigate();
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -25,7 +27,7 @@ export default function UserLogin() {
         alert("Login successful!");
       }
 
-      useNavigate("/user-dashboard");
+      navigate("/user-dashboard");
 
     } catch (error) {
 

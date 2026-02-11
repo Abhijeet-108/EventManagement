@@ -6,6 +6,7 @@ export default function AdminLoginPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -23,7 +24,7 @@ export default function AdminLoginPage() {
               alert("Login successful!");
             }
 
-            useNavigate("/admin-dashboard");
+            navigate("/admin-dashboard");
     
         } catch (error) {
             console.log("Login error:", error);

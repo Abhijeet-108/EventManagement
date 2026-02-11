@@ -8,6 +8,8 @@ export default function VendorLogin() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
+  const navigate = useNavigate();
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -24,7 +26,7 @@ export default function VendorLogin() {
         alert("Login successful!");
       }
 
-      use ("/vendor-dashboard");
+      navigate("/vendor-dashboard");
 
     } catch (error) {
       console.log("Login error:", error);

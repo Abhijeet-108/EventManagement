@@ -9,6 +9,8 @@ export default function VendorSignupPage() {
   const [category, setCategory] = useState("");
   const [message, setMessage] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSignup = async() => {
     try {
 
@@ -22,7 +24,7 @@ export default function VendorSignupPage() {
       setMessage(res.data.message);
       alert(res.data.message);
 
-      useNavigate("/vendor-login");
+      navigate("/vendor-login");
 
     } catch (error) {
 
