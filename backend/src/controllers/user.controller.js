@@ -1,6 +1,7 @@
 import User from "../models/user.model.js";
 import Item from "../models/item.model.js";
 import Cart from "../models/cart.model.js";
+import Vendor from "../models/vendor.model.js";
 
 const userregister = async (req, res) => {
     try {
@@ -74,6 +75,31 @@ const viewVendor = async (req, res) => {
   }
 }
 
+const getVendorsByCategory = async (req, res) => {
+  try {
+
+    const vendors = await Vendor.find({
+      category: req.params.category
+    });
+
+    res.json(vendors);
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const getVendorById = async (req, res) => {
+    try {
+        const vendor = await Vendor.findById(req.params.vendorId);
+        const items = await Item.find({ vendorId: req.params.vendorId });
+        res.json({ vendorName: vendor.name, items });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+
 const checkOrderStatus = async (req, res) => {
     try {
         const cart = await Cart.find({ userId: req.user.id });
@@ -83,4 +109,4 @@ const checkOrderStatus = async (req, res) => {
     }
 }
 
-export { userregister, userlogin, viewVendor, checkOrderStatus };
+export { userregister, userlogin, viewVendor, checkOrderStatus, getVendorsByCategory, getVendorById };

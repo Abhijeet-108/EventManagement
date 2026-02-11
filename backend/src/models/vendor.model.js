@@ -34,11 +34,14 @@ vendorSchema.methods.isPasswordCorrect = async function(password){
 };
 
 vendorSchema.methods.generateAuthToken = function () {
-    return jwt.sign(
-        { _id: this._id, email: this.email },
-        process.env.JWT_SECRET,
-        { expiresIn: '24h' }
-    );
+  return jwt.sign(
+    {
+      id: this._id,
+      role: "vendor"
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "1d" }
+  );
 };
 
 vendorSchema.statics.hashPassword = async function(password){

@@ -74,13 +74,14 @@ const Vendorlogin = async (req, res) => {
 
 const addItem = async (req, res) => {
   try {
-    const { name, price, description } = req.body;
+    const { name, price, description, image } = req.body;
 
     const item = await Item.create({
       vendorId: req.user.id,
       name,
       price,
-      description
+      description,
+      image
     });
 
     res.status(201).json({ message: "Item added", item });

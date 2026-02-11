@@ -14,7 +14,12 @@ const itemSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  description: String,
+  description: {
+    type: String,
+  },
+  image:{
+    type: String,
+  },
   status: {
     type: String,
     enum: ["available", "requested", "sold"],

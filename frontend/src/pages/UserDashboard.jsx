@@ -1,15 +1,30 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function UserDashboard() {
 
   const [selectedCategory, setSelectedCategory] = useState("");
+  const navigate = useNavigate();
 
   const categories = ["Catering", "Florist", "Decoration", "Lighting"];
+
+  const handleCategoryChange = (e) => {
+    const category = e.target.value;
+    setSelectedCategory(category);
+
+    if (category) {
+      navigate(`/vendors/${category}`);
+    }
+  };
 
   const handleCart = () => alert("Open Cart");
   const handleGuestList = () => alert("Open Guest List");
   const handleOrderStatus = () => alert("Check Order Status");
-  const handleLogout = () => alert("Logging out...");
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("vendor");
+    navigate("/user-login");
+  }
 
   return (
     <div className="min-h-screen bg-gray-200 flex">
@@ -20,7 +35,7 @@ export default function UserDashboard() {
         <div className="flex justify-around flex-wrap gap-10">
           <select
             value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
+            onChange={handleCategoryChange}
             className="bg-blue-500 px-12 py-6 rounded-xl text-black font-medium shadow-md"
           >
             <option value="">Vendor</option>

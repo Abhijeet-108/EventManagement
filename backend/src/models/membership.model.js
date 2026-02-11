@@ -15,7 +15,7 @@ const membershipSchema = new mongoose.Schema({
   durationInDays: Number,
   assignedBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Admin"   // UPDATED
+    ref: "Admin"
   }
 }, { timestamps: true });
 

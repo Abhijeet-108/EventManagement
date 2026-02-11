@@ -22,10 +22,12 @@ export default function UserLogin() {
 
       console.log("Login response:", res.data);
 
-      if (res.status === 200) {
-        setMessage("Login successful!");
-        alert("Login successful!");
-      }
+      localStorage.setItem("token", res.data.token);
+
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+
+      setMessage("Login successful!");
+      alert("Login successful!");
 
       navigate("/user-dashboard");
 
@@ -34,8 +36,7 @@ export default function UserLogin() {
       console.log("Login error:", error);
 
       setMessage(
-        error?.response?.data?.message ||
-        "Login failed"
+        error?.response?.data?.message || "Login failed"
       );
     }
   };
@@ -58,9 +59,10 @@ export default function UserLogin() {
         <form onSubmit={handleLogin}>
 
           <div className="flex flex-col items-center gap-8">
+
             <div className="flex items-center gap-10 w-full justify-center">
 
-              <div className="bg-blue-500 text-black px-6 py-3 rounded-md w-40 text-center font-medium">
+              <div className="bg-blue-500 px-6 py-3 rounded-md w-40 text-center font-medium">
                 User Id
               </div>
 
@@ -69,12 +71,14 @@ export default function UserLogin() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="User"
-                className="bg-blue-100 border border-blue-300 px-4 py-3 w-[450px] outline-none"
+                className="bg-blue-100 border px-4 py-3 w-[450px] outline-none"
+                required
               />
             </div>
+
             <div className="flex items-center gap-10 w-full justify-center">
 
-              <div className="bg-blue-500 text-black px-6 py-3 rounded-md w-40 text-center font-medium">
+              <div className="bg-blue-500 px-6 py-3 rounded-md w-40 text-center font-medium">
                 Password
               </div>
 
@@ -83,22 +87,24 @@ export default function UserLogin() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                className="bg-blue-100 border border-blue-300 px-4 py-3 w-[450px] outline-none"
+                className="bg-blue-100 border px-4 py-3 w-[450px] outline-none"
+                required
               />
             </div>
+
             <div className="flex gap-16 mt-10">
 
               <button
                 type="button"
                 onClick={handleCancel}
-                className="bg-gray-400 hover:bg-gray-500 text-black px-10 py-3 rounded-xl shadow-md"
+                className="bg-gray-400 px-10 py-3 rounded-xl shadow-md"
               >
                 Cancel
               </button>
 
               <button
                 type="submit"
-                className="bg-gray-400 hover:bg-gray-500 text-black px-10 py-3 rounded-xl shadow-md"
+                className="bg-gray-400 px-10 py-3 rounded-xl shadow-md"
               >
                 Login
               </button>
