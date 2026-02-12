@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     minlength: 6,
     select: false
-  }
+  },
 }, { timestamps: true });
 
 
@@ -30,9 +30,9 @@ userSchema.methods.isPasswordCorrect = async function(password){
 
 userSchema.methods.generateAuthToken = function () {
     return jwt.sign(
-        { _id: this._id, email: this.email },
+        { _id: this._id, email: this.email, role: "user" },
         process.env.JWT_SECRET,
-        { expiresIn: '24h' }
+        { expiresIn: '7d' }
     );
 };
 

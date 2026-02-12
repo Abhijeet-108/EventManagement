@@ -21,6 +21,7 @@ import adminRouter from "./routes/admin.route.js";
 import cartRouter from "./routes/cart.route.js";
 import paymentRouter from "./routes/payment.route.js";
 import guestRouter from "./routes/guest.route.js";
+import orderRouter from "./routes/order.route.js";
 
 app.use("/api/users", userRouter);
 app.use("/api/vendors", vendorRouter);
@@ -28,5 +29,6 @@ app.use("/api/admins", adminRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/payment", paymentRouter);
 app.use("/api/guest", guestRouter);
+app.use("/api/orders", orderRouter);
 
 export {app};

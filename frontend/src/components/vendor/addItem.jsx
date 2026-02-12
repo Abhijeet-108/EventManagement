@@ -84,23 +84,26 @@ export default function AddItem() {
     }
   }, []);
 
+  const handleviewProducts = () => {
+    navigate("/vendor-items"); 
+  }
+
   return (
     <div className="min-h-screen bg-gray-200">
 
-      {/* Header */}
       <div className="bg-[#5f76b5] p-6 flex justify-between items-center text-black">
         <h2>Welcome {vendorData?.name || " "}</h2>
 
         <div className="flex gap-4">
-          <button className="bg-gray-200 px-6 py-2 rounded-lg shadow">
+          {/* <button className="bg-gray-200 px-6 py-2 rounded-lg shadow">
             Product Status
-          </button>
+          </button> */}
 
-          <button className="bg-gray-200 px-6 py-2 rounded-lg shadow">
+          {/* <button className="bg-gray-200 px-6 py-2 rounded-lg shadow">
             Request Item
-          </button>
+          </button> */}
 
-          <button className="bg-gray-200 px-6 py-2 rounded-lg shadow">
+          <button onClick={handleviewProducts} className="bg-gray-200 px-6 py-2 rounded-lg shadow">
             View Product
           </button>
 
@@ -115,7 +118,6 @@ export default function AddItem() {
 
       <div className="flex">
 
-        {/* LEFT FORM */}
         <div className="bg-[#5f76b5] w-1/2 p-12 flex flex-col items-center gap-8">
 
           <input
@@ -132,7 +134,6 @@ export default function AddItem() {
             className="w-3/4 bg-gray-200 p-4 rounded-lg"
           />
 
-          {/* Keep as URL unless you implement multer */}
           <input
             placeholder="Image URL"
             value={productImage}
@@ -149,7 +150,6 @@ export default function AddItem() {
           </button>
         </div>
 
-        {/* RIGHT LIST */}
         <div className="w-1/2 p-12">
 
           <div className="grid grid-cols-4 gap-6 mb-6 font-semibold">

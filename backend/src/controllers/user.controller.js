@@ -16,7 +16,7 @@ const userregister = async (req, res) => {
         const newUser = await User.create({
             name,
             email,
-            password: hashedPassword
+            password: hashedPassword,
         });
 
         console.log("New user created: ", newUser);
@@ -47,6 +47,8 @@ const userlogin = async (req, res) => {
         if(!isMatch){
             return res.status(401).json({ message: "Invalid username or password" });
         }
+
+        console.log("SECRET used to VERIFY(user login):", process.env.JWT_SECRET);
 
         const token = user.generateAuthToken();
 

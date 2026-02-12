@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function UserDashboard() {
 
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [name, setName] = useState("");
+
   const navigate = useNavigate();
 
   const categories = ["Catering", "Florist", "Decoration", "Lighting"];
@@ -17,20 +19,32 @@ export default function UserDashboard() {
     }
   };
 
-  const handleCart = () => alert("Open Cart");
+  const handleCart = () => {
+    navigate("/cart")
+  };
   const handleGuestList = () => alert("Open Guest List");
-  const handleOrderStatus = () => alert("Check Order Status");
+  const handleOrderStatus = () => {
+    navigate("/product-status"); 
+  };
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("vendor");
     navigate("/user-login");
   }
 
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    console.log("Vendor data from localStorage:", user);
+    if (user) {
+      setName(JSON.parse(user));
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-200 flex">
       <div className="flex-1 p-10">
         <div className="bg-blue-500 text-center text-black py-3 font-semibold text-xl mb-16">
-          WELCOME USER
+          WELCOME {name?.name || " "}
         </div>
         <div className="flex justify-around flex-wrap gap-10">
           <select

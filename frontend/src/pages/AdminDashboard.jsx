@@ -1,21 +1,26 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminDashboard() {
 
+  const navigate = useNavigate();
+
   const handleHome = () => {
-    alert("Navigate to Home");
+    navigate("/admin-dashboard");
   };
 
   const handleLogout = () => {
-    alert("Logging out...");
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/admin-login");
   };
 
   const handleMaintainUser = () => {
-    alert("Maintain User Section");
+    navigate("/admin/users");
   };
 
   const handleMaintainVendor = () => {
-    alert("Maintain Vendor Section");
+    navigate("/admin/vendors");
   };
 
   return (

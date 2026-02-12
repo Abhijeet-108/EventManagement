@@ -14,6 +14,11 @@ import ItemViewPage from './components/vendor/VendorItem.jsx'
 import AddItem from './components/vendor/addItem.jsx'
 import VendorList from './components/user/vendor.jsx'
 import VendorItems from './components/user/vendorItems.jsx'
+import Cart from './components/user/cart.jsx'
+import Checkout from './components/user/CheckOut.jsx'
+import ProductStatus from './components/user/ProductStatus.jsx'
+import UserMaintaince from './components/admin/userMaintain.jsx'
+import VendorMaintaince from './components/admin/vendorMaintain.jsx'
 
 function App() {
 
@@ -33,6 +38,11 @@ function App() {
         <Route path='/add-item' element={<AddItem />} />
         <Route path="/vendors/:category" element={<VendorList />} />
         <Route path="/vendor-items/:vendorId" element={<VendorItems />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/product-status" element={<ProductStatus />} />
+        <Route path="/admin/users" element={<UserMaintaince />} />
+        <Route path="/admin/vendors" element={<VendorMaintaince />} />
       </Routes>
     </>
   )

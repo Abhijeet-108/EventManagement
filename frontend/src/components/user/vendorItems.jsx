@@ -26,8 +26,21 @@ export default function VendorItems() {
         }
     };
 
-    const handleAddToCart = (item) => {
-        alert(`${item.name} added to cart!`);
+    const handleAddToCart = async(item) => {
+        try {
+            const token = localStorage.getItem("token");
+            console.log("Adding to cart with token:", token);
+            await api.post("/cart/add",{
+                itemId: item._id,
+                quantity: 1
+            },{
+                headers:{ Authorization: `Bearer ${token}` }
+            });
+            alert("Item added to cart!");
+            navigate("/cart");
+        } catch (error) {
+            
+        }
     }
 
     const handleHome = () => {
